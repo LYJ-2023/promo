@@ -53,61 +53,16 @@
 /*네브바 끝*/
 
 /*풀스크린 슬라이드 화면 시작*/
-#fullSlider{
+#slider {
     width: 100%;
-    height: 100vh;
-    background-color: var(--defaultColor1);
+    overflow: hidden;
 }
-    /*이미지 슬라이드*/
-    #fullSlider{
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-    .slider_container{
-        display: flex;
-        animation: slide 7.5s infinite;
-    }
-    #fullSlider .slider_container .slide{
-        min-width: 100%;
-    }
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        33% {
-            transform: translateX(-100);
-        }
-        66% {
-            transform: translateX(-200);
-        }
-        100% {
-            transform: translateX(-300);
-        }
-    }
-
-    /*도트*/
-    .nav-dots {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--defaultColor1);
-        margin: 0 5px;
-        cursor: pointer;
-    }
-    
-    .dot.active {
-        background: var(--mainColor3);
-    }
+.sliderWrap {
+    display: flex;
+}
+.sliderWrap .slider img {
+    vertical-align: top;
+}
     
 /*풀스크린 슬라이드 화면 끝*/
 
