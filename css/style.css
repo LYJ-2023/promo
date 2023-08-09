@@ -55,6 +55,7 @@
 /*풀스크린 슬라이드 화면 시작*/
 #slider {
     width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 .sliderWrap {
