@@ -47,15 +47,64 @@ body{scroll-behavior: smooth;}
         border-radius: 50px;
         background-color: rgba(175, 129, 194, 0.1);
     }
+    
     /*메뉴 끝*/
 
     /*햄버거 메뉴 시작*/
+    .hamburger {
+        display: none; /* 기본적으로 표시되지 않음 */
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        cursor: pointer;
+        margin: 0 50px;
+    }
+    
+    .hamburger span {
+        width: 30px;
+        height: 3px;
+        background-color: var(--mainColor1);
+    }
+    
+    /* 화면 크기가 1400px 이하일 때 */
+    @media (max-width: 1400px) {
+        #navbar .nav {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 80px; /* navbar의 높이 */
+            left: 0;
+            background-color: var(--defaultColor1);
+        }
+    
+        #navbar .nav ul {
+            flex-direction: column;
+        }
+    
+        #navbar .nav ul li {
+            text-align: center;
+        }
+    
+        #navbar .nav ul li a {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+        }
+        #navbar > .nav > ul > li > a:hover{
+            border-radius: 50px;
+            background-color: rgba(175, 129, 194, 0.1);
+        }
+        .hamburger {
+            display: flex;
+        }
+    }
     /*햄버거 메뉴 끝*/
 /*네브바 끝*/
 
 /*풀스크린 슬라이드 화면 시작*/
 #slider {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
