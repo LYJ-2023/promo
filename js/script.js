@@ -1,4 +1,15 @@
 $(document).ready(function(){
+    //햄버거 메뉴 시작
+    $('.hamburger').on('click', function() {
+        $('.nav').slideToggle();
+    });
+    $(window).on('resize', function(){
+        if($(window).width() > 1400) {
+            // 화면 크기가 1400px 초과일 때
+            $('.nav').removeAttr('style');  // inline 스타일 제거
+        }
+    });
+    //햄버거 메뉴 끝
     //슬라이드 시작
     $(function(){
         let currentIndex = 0;   //현재 이미지
