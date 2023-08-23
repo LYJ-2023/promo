@@ -141,6 +141,7 @@ body {scroll-behavior: smooth;}
     height: 100vh;
     background-color: var(--mainColor2);
     position: relative;
+    overflow: hidden;
 }
 .buyouyoso_f{
     position: absolute;
@@ -208,6 +209,8 @@ body {scroll-behavior: smooth;}
 
 #introduce > .blendmode > img {
     position: absolute;
+    top: 0;
+    left: 0;
     transform: scaleX(-1);
     width: 100%;
     height: 100%;
@@ -785,6 +788,8 @@ body {scroll-behavior: smooth;}
 
 #purchaseLink > .blendmode > img {
     position: absolute;
+    top: 0;
+    left: 0;
     transform: rotate(180deg);
     width: 100%;
     height: 100%;
