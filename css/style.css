@@ -1,0 +1,848 @@
+@charset "UTF-8";
+
+/* 공통 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--mainfont);
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+li{
+    list-style-type: none;
+}
+/*구문 추가======*/html, body {position: relative;}
+body {scroll-behavior: smooth;}
+
+/* 전체 영역 */
+#wrap {width: 100%;}
+
+/* 네비게이션 바 */
+#navbar {
+    width: 100%;
+    height: 80px;
+    /* background-color: var(--defaultColor1); */
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+}
+#navbar .logo {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#navbar > .nav {
+    font-weight: bold;
+    padding: 0 30px;
+}
+#navbar > .nav > ul {
+    display: flex;
+    list-style-type: none;
+}
+#navbar > .nav > ul > li > a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: var(--mainColor1);
+}
+#navbar > .nav > ul > li > a:hover {
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+    margin: 0 50px;
+}
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--mainColor1);
+}
+    
+/* 화면 크기가 1400px 이하일 때 */
+@media (max-width: 1400px) {
+    #navbar .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* navbar의 높이 */
+        left: 0;
+        background-color: var(--defaultColor1);
+    }
+
+    #navbar .nav ul {
+        flex-direction: column;
+    }
+
+    #navbar .nav ul li {
+        text-align: center;
+    }
+
+    #navbar .nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #navbar > .nav > ul > li > a:hover {
+        border-radius: 50px;
+        background-color: rgba(175, 129, 194, 0.1);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/*네브바 끝*/
+
+/* 풀스크린 슬라이드 화면 */
+@keyframes slidy {
+    0% { left: 0%; }
+    33% { left: 0%; }
+    50% { left: -100%; }
+    83% { left: -100%; }
+    100% { left: -200%; }
+}
+    div#slider { overflow: hidden; }
+    div#slider figure img { width: 33.33%; float: left; }
+    div#slider figure { 
+      position: relative;
+      width: 300%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 15s slidy infinite; 
+    }
+/* 풀스크린 슬라이드 화면 끝 */
+/* 책 소개 */
+#introduce {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainColor2);
+    position: relative;
+}
+.buyouyoso_f{
+    position: absolute;
+    right: -8%;
+    top: 0;
+}
+
+.buyouyoso_g{
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+}
+.buyouyoso_g img{
+    opacity: 50%;
+}
+
+.buyouyoso_h{
+    position: absolute;
+    right: 23%;
+    top: 12%;
+}
+.buyouyoso_h img{
+    width: 20rem;
+}
+
+#introduce .introduce_texts{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#introduce .introduce_texts h2{
+    font-size: 32px;
+    margin: 10% 0;
+}
+
+#introduce .introduce_texts p{
+    font-size: 18px;
+    margin-bottom: 2%;
+    padding: 0 13%;
+    line-height: 1.4;
+}
+
+#introduce .introduce_btn{
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px 45px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    z-index: 2;
+}
+
+#introduce::after {
+    background-blend-mode: soft-light;
+}
+
+#introduce .blendmode {
+    mix-blend-mode: soft-light;
+}
+
+#introduce > .blendmode > img {
+    position: absolute;
+    transform: scaleX(-1);
+    width: 100%;
+    height: 100%;
+}
+
+/* 카드 캐러셀 */
+#carousel {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainColor2);
+    position: relative;
+    text-align: center;
+}
+
+#carousel > p{
+    font-size: 1.2rem;
+}
+#carousel > h1{
+    font-size: 2.2rem;
+}
+
+#carousel::after {
+    background-blend-mode: soft-light;
+}
+
+#carousel .blendmode {
+    mix-blend-mode: soft-light;
+}
+
+#carousel > .blendmode > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-180deg);
+    width: 100%;
+    height: 100%;
+}
+
+/* 스와이퍼 컨테이너 스타일 설정 */
+.swiper-container {
+    width:1150px;                    /* 컨테이너의 너비 설정 */
+    padding-top: 50px;               /* 상단 패딩 설정 */
+    padding-bottom: 50px;            /* 하단 패딩 설정 */
+}
+
+/* 스와이퍼 내부 아이템 스타일 설정 */
+.swiper-slide .item {
+    display: flex;                   /* flex 디스플레이로 설정 (아이템들을 가로로 배열) */
+    flex-direction: row;             /* 아이템들을 가로 방향으로 배열 */
+    overflow: hidden;                /* 내용이 넘치면 숨김 처리 */
+    width: 614px;
+    height: 614px;
+}
+
+/* 스와이퍼 내부 각 div 스타일 설정 */
+.swiper-slide .item div {
+    width: 614px;                    /* div의 너비 설정 */
+    height: 614px;                   /* div의 높이 설정 */              /* div의 테두리 설정 */
+    background: pink;                /* div의 배경색 설정 */
+    /* float: left; 주석 처리된 코드, 필요 없을 경우 제거해도 됨 */
+}
+
+/* 출판사 서평 */
+#bookReview {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--defaultColor1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}   
+
+/* 픽시드 카드 */
+#bookReview > .bR_card > img {
+    position: absolute;
+    right: 15%;
+    top: 0;
+    transform: rotate(-35deg);
+    transition: all 0.5s;
+    z-index: 5;
+    width: 300px;
+    height: 360px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px var(--mainColor3);
+}
+
+#bookReview > .bR_card > img:hover {
+    transform: rotate(-25deg);
+    box-shadow: 0 0 20px 2px var(--mainColor3);
+    border: 1px solid var(--defaultColor1);
+}
+
+/* 출판사 리뷰 글 */
+#bookReview > .bR_bg {
+    width: 60%;
+    height: 82%;
+    box-shadow: 0 -5px 5px 1px var(--shadow);
+    background-color: var(--defaultColor1);
+    border-radius: 20px 20px 0 0;
+    margin-left: 20%;
+    /* position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#bookReview > .bR_bg > #brtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#bookReview > .bR_bg > #brtext > .bR_headtext {
+    margin: 70px;
+    width: 80%;
+    font-size: 24px;
+}
+
+#bookReview > .bR_bg > #brtext > .bR_text {
+    margin: 20px;
+    width: 80%;
+}
+
+/* 작가 소개 */
+#author {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--defaultColor1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#author .authorbg{
+    width: 60%;
+    height: 82%;
+    background-color: var(--defaultColor1);
+    margin-left: 20%;
+    padding: 0 20px;
+}
+
+#author .authorbg .author1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+    margin-bottom: 5rem;
+}
+
+#author .authorbg .author1 .author1_text{
+    width: 50%;
+}
+#author .authorbg .author1 .author1_text h2{
+    text-align: right;
+    padding: 10px;
+}
+#author .authorbg .author1 .author1_text .line{
+    float: right;
+    width: 18rem;
+    height: 0.3rem;
+    background-color: #000;
+    margin: 0 0 40px 0; 
+}
+#author .authorbg .author1 .author1_text p{
+    clear: both;
+    line-height: 1.5;
+}
+
+#author .authorbg .author2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+    margin-top: 5rem;
+}
+
+#author .authorbg .author2 .author2_text{
+    width: 50%;
+}
+#author .authorbg .author2 .author2_text h2{
+    text-align: right;
+    padding: 10px;
+}
+#author .authorbg .author2 .author2_text .line{
+    float: right;
+    width: 18rem;
+    height: 0.3rem;
+    background-color: #000;
+    margin: 0 0 40px 0; 
+}
+#author .authorbg .author2 .author2_text p{
+    clear: both;
+    line-height: 1.5;
+}
+
+/* 책 속에서 */
+#summary {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--defaultColor1);
+}
+
+#summary > .summary_bg {
+    width: 60%;
+    height: 82%;
+    box-shadow: 0 5px 5px 1px var(--shadow);
+    background-color: var(--defaultColor1);
+    border-radius:  0 0 20px 20px;
+    margin-left: 20%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#summary > .summary_bg > .summary_img{
+    padding: 20px;
+}
+
+#summary > .summary_bg > #summarytext {
+    padding: 20px;
+    width: 50%;
+    text-align: left;
+}
+
+#summary > .summary_bg > #summarytext > .summary_text{
+    margin: 10px;
+    font-size: 14px;
+}
+
+
+
+/* 구매자 리뷰 */
+#buyerReviews {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, var(--defaultColor1), var(--mainColor2));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buyouyoso_d{
+    position: absolute;
+    top: 7%;
+    right: 3%;
+}
+.buyouyoso_e{
+    position: absolute;
+    bottom: 30%;
+    left: 3%;
+}
+.buyouyoso_e img{
+    width: 16rem;
+    opacity: 40%;
+}
+
+#buyerReviews .tab{
+    z-index: 10;
+}
+
+#buyerReviews .tab .tabbtns{
+    display: flex;
+    /* align-items: center; */
+}
+#buyerReviews .tab .tabbtns .tabbtn{
+    padding: 1.5rem 2.5rem;
+    border-radius: 8rem 8rem 0 0;
+    background-color: var(--defaultColor1);
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+#buyerReviews .tab .tabbtns .t1{
+    border: solid var(--mainColor2);
+    border-bottom: 2px;
+    background-color: var(--mainColor2);
+}
+/* #buyerReviews .tab .tabbtns .t1:active{
+    background-color: var(--mainColor2);
+} */
+
+#buyerReviews .tab .tabbtns .t2{
+    border: solid var(--mainColor1);
+    border-bottom: 2px;
+}
+#buyerReviews .tab .tabbtns .t3{
+    border: solid var(--mainColor3);
+    border-bottom: 2px;
+}
+
+
+
+/* 첫 번째 탭 내용 */
+#buyerReviews .tab .tabcon{
+    display: flex;
+    width: 80rem;
+    height: 35rem;
+    background-color: var(--mainColor2);
+    padding: 2rem;
+}
+#buyerReviews .tab .tabcon .tabcon1{ 
+    width: 50%;
+    background-color: var(--defaultColor1);
+}
+    #buyerReviews .tab .tabcon .tabcon1 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon .tabcon1 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon .tabcon1 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon .tabcon1 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+#buyerReviews .tab .tabcon .tabcon2{
+    width: 50%;
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+    #buyerReviews .tab .tabcon .tabcon2 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon .tabcon2 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon .tabcon2 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon .tabcon2 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+/* 두 번째 탭 내용 */
+#buyerReviews .tab .tabcon_2nd{
+    display: flex;
+    width: 80rem;
+    height: 35rem;
+    background-color: var(--mainColor2);
+    padding: 2rem;
+}
+#buyerReviews .tab .tabcon_2nd .tabcon1{ 
+    width: 50%;
+    background-color: var(--defaultColor1);
+}
+    #buyerReviews .tab .tabcon_2nd .tabcon1 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon1 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon1 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon1 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+#buyerReviews .tab .tabcon_2nd .tabcon2{
+    width: 50%;
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+    #buyerReviews .tab .tabcon_2nd .tabcon2 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon2 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon2 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon_2nd .tabcon2 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+/* 셋 번째 탭 내용 */
+#buyerReviews .tab .tabcon_3rd{
+    display: flex;
+    width: 80rem;
+    height: 35rem;
+    background-color: var(--mainColor2);
+    padding: 2rem;
+}
+
+#buyerReviews .tab .tabcon_3rd .tabcon1 ul li span .tabcon_text > a{
+    color: var(--mainColor3);
+    text-decoration: underline;
+}
+
+#buyerReviews .tab .tabcon_3rd .tabcon1{ 
+    width: 50%;
+    background-color: var(--defaultColor1);
+}
+    #buyerReviews .tab .tabcon_3rd .tabcon1 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon1 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon1 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon1 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+#buyerReviews .tab .tabcon_3rd .tabcon2{
+    width: 50%;
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+    #buyerReviews .tab .tabcon_3rd .tabcon2 ul li{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon2 ul li img{
+        width: 5rem;
+        margin: 0.5rem;
+        border-radius: 100%;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon2 ul li span{
+        margin: 0.5rem;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon2 ul li span .tabcon_day{
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+    #buyerReviews .tab .tabcon_3rd .tabcon2 ul li span .tabcon_text > a{
+        color: var(--mainColor3);
+        text-decoration: underline;
+    }
+
+
+
+
+
+#buyerReviews::after {
+    background-blend-mode: soft-light;
+}
+
+#buyerReviews .blendmode {
+    mix-blend-mode: soft-light;
+}
+
+#buyerReviews > .blendmode > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+}
+
+/* 구매 링크 시작 */
+#purchaseLink {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainColor2);
+    position: relative;
+}
+
+#purchaseLink .link_container{
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#purchaseLink .link_container > .linkht{
+    font-size: 1.8rem;
+    padding: 20px 0 10px 0;
+}
+#purchaseLink .link_container > .linkt{
+    font-size: 1rem;
+    color: #4e4e4e;
+}
+#purchaseLink .link_container > a{
+    padding: 10px 45px;
+    margin: 1.8rem;
+    background-color: #FFB6D5;
+    color: var(--defaultColor1);
+}
+.buyouyoso_a{
+    position: absolute;
+    right: 20%;
+    top: -5%;
+}
+.buyouyoso_b{
+    position: absolute;
+    left: 10%;
+}
+.buyouyoso_c{
+    position: absolute;
+    bottom: 10%;
+    right: 30%
+}
+.buyouyoso_c > img{
+    width: 16rem;
+}
+#purchaseLink .linkbox_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 40rem;
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 0 32px 0 rgba(155, 103, 160, 0.37);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#purchaseLink::after {
+    background-blend-mode: soft-light;
+}
+
+#purchaseLink .blendmode {
+    mix-blend-mode: soft-light;
+}
+
+#purchaseLink > .blendmode > img {
+    position: absolute;
+    transform: rotate(180deg);
+    width: 100%;
+    height: 100%;
+}
+.starsec{
+    content: " ";
+      position: absolute;
+      width: 0.3rem;
+      height: 0.3rem;
+      border-radius: 100%;
+      background: transparent;
+      box-shadow: 571px 173px #FFB6D5, 1732px 143px #FFB6D5, 1745px 454px #fff, 234px 784px #FFB6D5, 1793px 1123px #fff, 1076px 504px #AF81C2, 633px 601px #fff, 350px 630px #fff, 1164px 782px #FFB6D5, 76px 690px #fff, 1825px 701px #fff, 1646px 578px #fff, 544px 293px #fff, 445px 1061px #fff, 928px 47px #FFB6D5, 168px 1410px #fff, 777px 782px #AF81C2, 1235px 1941px #AF81C2, 104px 1690px #fff, 1167px 1338px #FFB6D5, 345px 1652px #fff, 1682px 1196px #fff, 1995px 494px #fff, 428px 798px #FFB6D5, 340px 1623px #FFB6D5, 605px 349px #AF81C2, 1339px 1344px #fff, 1102px 1745px #fff, 1592px 1676px #fff, 419px 1024px #FFB6D5, 630px 1033px #fff, 1995px 1644px #FFB6D5, 1092px 712px #AF81C2, 1355px 606px #FFB6D5, 622px 1881px #fff, 1481px 621px #fff, 19px 1348px #fff, 864px 1780px #AF81C2, 442px 1136px #fff, 67px 712px #FFB6D5, 89px 1406px #FFB6D5, 275px 321px #fff, 592px 630px #AF81C2, 1012px 1690px #AF81C2, 1749px 23px #fff, 94px 1542px #FFB6D5, 1201px 1657px #fff, 1505px 692px #fff, 1799px 601px #fff, 656px 811px #FFB6D5, 701px 597px #FFB6D5, 1202px 46px #FFB6D5, 890px 569px #FFB6D5, 1613px 813px #fff, 223px 252px #fff, 983px 1093px #AF81C2, 726px 1029px #fff, 1764px 778px #fff, 622px 1643px #FFB6D5, 174px 1559px #fff, 212px 517px #fff, 340px 505px #FFB6D5, 1700px 39px #FFB6D5, 1768px 516px #fff, 849px 391px #fff, 228px 1824px #FFB6D5, 1119px 1680px #fff, 812px 1480px #fff, 1438px 1585px #fff, 137px 1397px #FFB6D5, 1080px 456px #fff, 1208px 1437px #fff, 857px 281px #fff, 1254px 1306px #fff, 987px 990px #fff, 1655px 911px #FFB6D5, 1102px 1216px #FFB6D5, 1807px 1044px #FFB6D5, 660px 435px #fff, 299px 678px #fff, 1193px 115px #fff, 918px 290px #fff, 1447px 1422px #fff, 91px 1273px #AF81C2, 108px 223px #AF81C2, 146px 754px #fff, 461px 1446px #FFB6D5, 1004px 391px #fff, 1529px 516px #fff, 1206px 845px #fff, 347px 583px #fff, 1102px 1332px #FFB6D5, 709px 1756px #FFB6D5, 1972px 248px #FFB6D5, 1669px 1344px #FFB6D5, 1132px 406px #fff, 320px 1076px #fff, 126px 943px #fff, 263px 604px #FFB6D5, 1546px 692px #fff;
+      animation: animStar 150s linear infinite;
+  }
+  
+  .starthird
+  {
+    content: " ";
+      position: absolute;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 100%;
+      background: transparent;
+      box-shadow: 571px 173px #fff, 1732px 143px #fff, 1745px 454px #fff, 234px 784px #fff, 1793px 1123px #fff, 1076px 504px #fff, 633px 601px #fff, 350px 630px #fff, 1164px 782px #fff, 76px 690px #fff, 1825px 701px #fff, 1646px 578px #fff, 544px 293px #fff, 445px 1061px #fff, 928px 47px #fff, 168px 1410px #fff, 777px 782px #fff, 1235px 1941px #fff, 104px 1690px #fff, 1167px 1338px #fff, 345px 1652px #fff, 1682px 1196px #fff, 1995px 494px #fff, 428px 798px #fff, 340px 1623px #fff, 605px 349px #fff, 1339px 1344px #fff, 1102px 1745px #fff, 1592px 1676px #fff, 419px 1024px #fff, 630px 1033px #fff, 1995px 1644px #fff, 1092px 712px #fff, 1355px 606px #fff, 622px 1881px #fff, 1481px 621px #fff, 19px 1348px #fff, 864px 1780px #fff, 442px 1136px #fff, 67px 712px #fff, 89px 1406px #fff, 275px 321px #fff, 592px 630px #fff, 1012px 1690px #fff, 1749px 23px #fff, 94px 1542px #fff, 1201px 1657px #fff, 1505px 692px #fff, 1799px 601px #fff, 656px 811px #fff, 701px 597px #fff, 1202px 46px #fff, 890px 569px #fff, 1613px 813px #fff, 223px 252px #fff, 983px 1093px #fff, 726px 1029px #fff, 1764px 778px #fff, 622px 1643px #fff, 174px 1559px #fff, 212px 517px #fff, 340px 505px #fff, 1700px 39px #fff, 1768px 516px #fff, 849px 391px #fff, 228px 1824px #fff, 1119px 1680px #fff, 812px 1480px #fff, 1438px 1585px #fff, 137px 1397px #fff, 1080px 456px #fff, 1208px 1437px #fff, 857px 281px #fff, 1254px 1306px #fff, 987px 990px #fff, 1655px 911px #fff, 1102px 1216px #fff, 1807px 1044px #fff, 660px 435px #fff, 299px 678px #fff, 1193px 115px #fff, 918px 290px #fff, 1447px 1422px #fff, 91px 1273px #fff, 108px 223px #fff, 146px 754px #fff, 461px 1446px #fff, 1004px 391px #fff, 1529px 516px #fff, 1206px 845px #fff, 347px 583px #fff, 1102px 1332px #fff, 709px 1756px #fff, 1972px 248px #fff, 1669px 1344px #fff, 1132px 406px #fff, 320px 1076px #fff, 126px 943px #fff, 263px 604px #fff, 1546px 692px #fff;
+      animation: animStar 10s linear infinite;
+  }
+  
+  .starfourth
+  {
+    content: " ";
+      position: absolute;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 100%;
+      background: transparent;
+      box-shadow: 571px 173px #fff, 1732px 143px #fff, 1745px 454px #fff, 234px 784px #fff, 1793px 1123px #fff, 1076px 504px #fff, 633px 601px #fff, 350px 630px #fff, 1164px 782px #fff, 76px 690px #fff, 1825px 701px #fff, 1646px 578px #fff, 544px 293px #fff, 445px 1061px #fff, 928px 47px #fff, 168px 1410px #fff, 777px 782px #fff, 1235px 1941px #fff, 104px 1690px #fff, 1167px 1338px #fff, 345px 1652px #fff, 1682px 1196px #fff, 1995px 494px #fff, 428px 798px #fff, 340px 1623px #fff, 605px 349px #fff, 1339px 1344px #fff, 1102px 1745px #fff, 1592px 1676px #fff, 419px 1024px #fff, 630px 1033px #fff, 1995px 1644px #fff, 1092px 712px #fff, 1355px 606px #fff, 622px 1881px #fff, 1481px 621px #fff, 19px 1348px #fff, 864px 1780px #fff, 442px 1136px #fff, 67px 712px #fff, 89px 1406px #fff, 275px 321px #fff, 592px 630px #fff, 1012px 1690px #fff, 1749px 23px #fff, 94px 1542px #fff, 1201px 1657px #fff, 1505px 692px #fff, 1799px 601px #fff, 656px 811px #fff, 701px 597px #fff, 1202px 46px #fff, 890px 569px #fff, 1613px 813px #fff, 223px 252px #fff, 983px 1093px #fff, 726px 1029px #fff, 1764px 778px #fff, 622px 1643px #fff, 174px 1559px #fff, 212px 517px #fff, 340px 505px #fff, 1700px 39px #fff, 1768px 516px #fff, 849px 391px #fff, 228px 1824px #fff, 1119px 1680px #fff, 812px 1480px #fff, 1438px 1585px #fff, 137px 1397px #fff, 1080px 456px #fff, 1208px 1437px #fff, 857px 281px #fff, 1254px 1306px #fff, 987px 990px #fff, 1655px 911px #fff, 1102px 1216px #fff, 1807px 1044px #fff, 660px 435px #fff, 299px 678px #fff, 1193px 115px #fff, 918px 290px #fff, 1447px 1422px #fff, 91px 1273px #fff, 108px 223px #fff, 146px 754px #fff, 461px 1446px #fff, 1004px 391px #fff, 1529px 516px #fff, 1206px 845px #fff, 347px 583px #fff, 1102px 1332px #fff, 709px 1756px #fff, 1972px 248px #fff, 1669px 1344px #fff, 1132px 406px #fff, 320px 1076px #fff, 126px 943px #fff, 263px 604px #fff, 1546px 692px #fff;
+      animation: animStar 50s linear infinite;
+  }
+  
+  .starfifth
+  {
+    content: " ";
+      position: absolute;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 100%;
+      background: transparent;
+      box-shadow: 571px 173px #fff, 1732px 143px #fff, 1745px 454px #fff, 234px 784px #fff, 1793px 1123px #fff, 1076px 504px #fff, 633px 601px #fff, 350px 630px #fff, 1164px 782px #fff, 76px 690px #fff, 1825px 701px #fff, 1646px 578px #fff, 544px 293px #fff, 445px 1061px #fff, 928px 47px #fff, 168px 1410px #fff, 777px 782px #fff, 1235px 1941px #fff, 104px 1690px #fff, 1167px 1338px #fff, 345px 1652px #fff, 1682px 1196px #fff, 1995px 494px #fff, 428px 798px #fff, 340px 1623px #fff, 605px 349px #fff, 1339px 1344px #fff, 1102px 1745px #fff, 1592px 1676px #fff, 419px 1024px #fff, 630px 1033px #fff, 1995px 1644px #fff, 1092px 712px #fff, 1355px 606px #fff, 622px 1881px #fff, 1481px 621px #fff, 19px 1348px #fff, 864px 1780px #fff, 442px 1136px #fff, 67px 712px #fff, 89px 1406px #fff, 275px 321px #fff, 592px 630px #fff, 1012px 1690px #fff, 1749px 23px #fff, 94px 1542px #fff, 1201px 1657px #fff, 1505px 692px #fff, 1799px 601px #fff, 656px 811px #fff, 701px 597px #fff, 1202px 46px #fff, 890px 569px #fff, 1613px 813px #fff, 223px 252px #fff, 983px 1093px #fff, 726px 1029px #fff, 1764px 778px #fff, 622px 1643px #fff, 174px 1559px #fff, 212px 517px #fff, 340px 505px #fff, 1700px 39px #fff, 1768px 516px #fff, 849px 391px #fff, 228px 1824px #fff, 1119px 1680px #fff, 812px 1480px #fff, 1438px 1585px #fff, 137px 1397px #fff, 1080px 456px #fff, 1208px 1437px #fff, 857px 281px #fff, 1254px 1306px #fff, 987px 990px #fff, 1655px 911px #fff, 1102px 1216px #fff, 1807px 1044px #fff, 660px 435px #fff, 299px 678px #fff, 1193px 115px #fff, 918px 290px #fff, 1447px 1422px #fff, 91px 1273px #fff, 108px 223px #fff, 146px 754px #fff, 461px 1446px #fff, 1004px 391px #fff, 1529px 516px #fff, 1206px 845px #fff, 347px 583px #fff, 1102px 1332px #fff, 709px 1756px #fff, 1972px 248px #fff, 1669px 1344px #fff, 1132px 406px #fff, 320px 1076px #fff, 126px 943px #fff, 263px 604px #fff, 1546px 692px #fff;
+      animation: animStar 80s linear infinite;
+  }
+  
+  @keyframes animStar
+  {
+    0% {
+      transform: translateY(0px);
+  }
+    100% {
+      transform: translateY(-2000px);
+  }
+  }
+/* 구매 링크 끝 */
